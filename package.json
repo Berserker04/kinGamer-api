@@ -1,0 +1,30 @@
+{
+  "name": "kinGamer-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Berserker04/kinGamer-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Berserker04/kinGamer-api/issues"
+  },
+  "homepage": "https://github.com/Berserker04/kinGamer-api#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mogoose": "0.0.1-security",
+    "mongoose": "^6.0.8",
+    "morgan": "^1.10.0"
+  }
+}
