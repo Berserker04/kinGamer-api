@@ -1,6 +1,7 @@
 const express = require("express");
-const morgan = require("morgan");
+const colors = require("colors");
 const cors = require("cors");
+const morgan = require("morgan");
 
 require("./config");
 
@@ -11,10 +12,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-const route = require("./network/routes");
+const route = require("./network");
 route(app);
 
 app.listen(3001, () => {
   console.clear();
-  console.log("Server running in port 3001 http://localhost:3001/");
+  console.log(`${"Server".yellow} ${"running ... =>".blue} ${"OK!".red}`);
 });

@@ -1,8 +1,12 @@
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
+// Conexión a la base de datos
+const URL_DB = process.env.DB_PROD || process.env.DB_DEV;
 const mongoose = require("mongoose");
 
-const url_db = "mongodb://localhost:27017/KinGamer";
-
-mongoose.connect(url_db, {
+mongoose.connect(URL_DB, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
 });
