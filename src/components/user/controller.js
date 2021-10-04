@@ -1,4 +1,5 @@
 const bcrypt = require("bcrypt");
+const saveImage = require("../files/saveImage");
 
 const storePerson = require("../people/store");
 const store = require("./store");
@@ -8,6 +9,11 @@ const register = async (data) => {
 
   if (!user || !person) {
     return false;
+  }
+
+  if (person.image) {
+    const { image, first_name } = data;
+    person.image = saveImage(image, first_name);
   }
 
   person = await storePerson.add(person).catch((e) => false);

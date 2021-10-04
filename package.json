@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Berserker04/kinGamer-api#readme",
   "dependencies": {
+    "base64-img": "^1.0.4",
     "bcrypt": "^5.0.1",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
@@ -26,6 +27,7 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.8",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "slug": "^5.1.0"
   }
 }
