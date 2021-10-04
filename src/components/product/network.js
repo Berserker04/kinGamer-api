@@ -6,6 +6,7 @@ const controller = require("./controller");
 const route = express();
 
 route.post("/", (req, res) => {
+  // console.log(req.body);
   controller
     .register(req.body)
     .then((result) => {
@@ -38,7 +39,7 @@ route.put("/:_id", (req, res) => {
     .update(req.params._id, req.body)
     .then((result) => {
       if (!result) return response.error(req, res, 200, "Revisa los datos.");
-      response.success(req, res, 200, "Modificación exíta.");
+      response.success(req, res, 200, "Modificación exítosa.");
     })
     .catch((error) => {
       console.error(error);

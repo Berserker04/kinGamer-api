@@ -11,13 +11,9 @@ const people = new Schema({
     type: String,
     required: true,
   },
-  document: {
-    type: Number,
-    required: true,
-  },
-  cell_phone: {
-    type: Number,
-    required: true,
+  image: {
+    type: String,
+    required: false,
   },
 });
 

@@ -1,12 +1,14 @@
 const store = require("./store");
+const saveImage = require("../files/saveImage");
 
 const register = async (data) => {
   if (!data) {
     return false;
   }
-
+  const { image, name } = data;
+  data.image = saveImage(image, name);
   return await store
-    .add({ ...data })
+    .add(data)
     .then((result) => result)
     .catch((e) => false);
 };
