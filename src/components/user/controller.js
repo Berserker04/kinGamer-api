@@ -38,7 +38,10 @@ const register = async (data) => {
 };
 
 const search = async (filter) => {
-  return await store.get(filter).catch((e) => false);
+  return await store
+    .get(filter)
+    .then((result) => result[0])
+    .catch((e) => false);
 };
 
 const changeState = async (filter, data) => {
@@ -51,7 +54,7 @@ const update = async (user_id, data) => {
   if (!user || !person) {
     return false;
   }
-  console.log(person);
+  console.log(person, "trae");
   await storePerson.edit({ _id: person._id }, person).catch((e) => false);
 
   if (user.password) user.password = bcrypt.hashSync(user.password, 10);

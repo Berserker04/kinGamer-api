@@ -19,9 +19,9 @@ const route = (app) => {
     res.sendFile(path.join(__dirname, `../uploads/images/${req.params.image}`));
   });
 
-  app.get("/", (req, res) => {
-    res.send(`Server running ... => OK!`);
-  });
+  // app.get("/", (req, res) => {
+  //   res.send(`Server running ... => OK!`);
+  // });
 };
 
 module.exports = route;

@@ -6,7 +6,8 @@ const add = async (user) => {
 };
 
 const get = async (filter) => {
-  return await User.find({...filter}, [
+  console.log(filter);
+  return await User.find(filter, [
     "user_name",
     "email",
     "user_id",

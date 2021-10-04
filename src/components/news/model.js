@@ -15,9 +15,9 @@ const news = new Schema({
     required: true,
   },
   state: {
-    type: String,
+    type: Boolean,
     required: true,
-    default: "active",
+    default: true,
   },
   created_at: {
     type: Date,

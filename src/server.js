@@ -2,6 +2,7 @@ const express = require("express");
 const colors = require("colors");
 const cors = require("cors");
 const morgan = require("morgan");
+const path = require("path")
 
 require("./config");
 
@@ -15,7 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 const route = require("./network");
 route(app);
 
-app.listen(3001, () => {
+app.use(express.static(path.join(__dirname, '../public')));
+
+app.listen(process.env.PORT, () => {
   console.clear();
   console.log(`${"Server".yellow} ${"running ... =>".blue} ${"OK!".red}`);
 });

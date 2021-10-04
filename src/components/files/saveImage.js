@@ -1,13 +1,14 @@
 const base64Img = require("base64-img");
 const slug = require("slug");
-const bcrypt = require("bcrypt");
 
 const saveImage = (image, name) => {
   const destpath = "src/uploads/images";
-  const filename = bcrypt.hashSync(name, 5);
+  const filename = slug(name, "_");
 
   base64Img.img(image, destpath, filename, (err, filepath) => {});
-  return filename + ".jpg";
+  let type = image.split(";")[0].split("/")[1];
+  if (type === "jpeg") type = "jpg";
+  return filename + "." + type;
 };
 
 module.exports = saveImage;
