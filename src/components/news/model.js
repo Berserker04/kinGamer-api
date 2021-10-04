@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const products = new Schema({
-  name: {
+const news = new Schema({
+  title: {
     type: String,
     required: true,
   },
@@ -14,14 +14,10 @@ const products = new Schema({
     type: "string",
     required: true,
   },
-  urlBuy: {
-    type: "string",
-    required: true,
-  },
   state: {
-    type: String,
+    type: Boolean,
     required: true,
-    default: "active",
+    default: true,
   },
   created_at: {
     type: Date,
@@ -29,4 +25,4 @@ const products = new Schema({
   },
 });
 
-module.exports = mongoose.model("products", products);
+module.exports = mongoose.model("news", news);

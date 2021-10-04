@@ -6,7 +6,6 @@ const controller = require("./controller");
 const route = express();
 
 route.post("/", (req, res) => {
-  // console.log(req.body);
   controller
     .register(req.body)
     .then((result) => {
