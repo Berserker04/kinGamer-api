@@ -6,7 +6,8 @@ const register = async (data) => {
     return false;
   }
   const { image, title } = data;
-  data.image = saveImage(image, title);
+  if (image) data.image = saveImage(image, title);
+
   return await store
     .add(data)
     .then((result) => result)
@@ -21,7 +22,8 @@ const update = async (report_id, data) => {
   if (!data) {
     return false;
   }
-
+  const { image, title } = data;
+  if (image) data.image = saveImage(image, title);
   return await store
     .edit(report_id, data)
     .then((result) => result)
