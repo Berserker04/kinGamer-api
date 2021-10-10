@@ -6,7 +6,7 @@ const add = async (data) => {
 };
 
 const get = async (filter = {}) => {
-  return await News.find(filter);
+  return await News.find(filter).sort({_id: -1})
 };
 
 const edit = async (_id, data = {}) => {
