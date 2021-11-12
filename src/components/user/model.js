@@ -14,11 +14,11 @@ const users = new Schema({
     type: String,
     required: true,
   },
-  user_id: {
-    type: Schema.Types.ObjectId,
-    ref: "users",
-    required: false,
-  },
+  // user_id: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "users",
+  //   required: false,
+  // },
   person_id: {
     type: Schema.Types.ObjectId,
     ref: "people",

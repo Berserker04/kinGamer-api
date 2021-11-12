@@ -1,1 +1,336 @@
-<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/assets/logo.png"><link rel="stylesheet" href="/assets/css/index.css"><link rel="stylesheet" href="/assets/css/news.css"><link rel="stylesheet" href="/assets/css/services.css"><link rel="stylesheet" href="/assets/css/footer.css"><link rel="stylesheet" href="/assets/css/team.css"><link rel="stylesheet" href="/assets/css/formulario.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script><title>KingGamer</title><link href="/css/app.1f3f0c11.css" rel="preload" as="style"><link href="/js/app.928dbdcb.js" rel="preload" as="script"><link href="/js/chunk-vendors.fb769efd.js" rel="preload" as="script"><link href="/css/app.1f3f0c11.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but proyecto doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="/js/chunk-vendors.fb769efd.js"></script><script src="/js/app.928dbdcb.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row p-3">
+        <div class="col-5">
+          <div class="col-12 d-flex">
+            <div class="col-6">
+              <img
+                src="./assets/profile.jpg"
+                alt=""
+                height="50"
+                width="50"
+                class="rounded-circle"
+              />
+            </div>
+            <div class="col-6 d-flex justify-content-end">
+              <p>Config</p>
+            </div>
+          </div>
+          <div class="col-12 my-4">
+            <input type="text" class="form-control" />
+          </div>
+          <hr />
+          <h2>Chats</h2>
+
+          <!-- CARD USER -->
+
+          <div class="col-12 row p-2">
+            <div class="col-2">
+              <img
+                src="./assets/profile.jpg"
+                alt=""
+                height="50"
+                width="50"
+                class="rounded-circle"
+              />
+            </div>
+            <div
+              class="
+                col-7
+                d-flex
+                flex-column
+                justify-content-center
+                align-items-center
+              "
+            >
+              <strong>Name</strong>
+              <p>Algo breve</p>
+            </div>
+            <div
+              class="
+                col-3
+                d-flex
+                flex-column
+                justify-content-center
+                align-items-end
+              "
+            >
+              <span>Fecha</span>
+              <span>5</span>
+            </div>
+          </div>
+          <div class="col-12 row p-2">
+            <div class="col-2">
+              <img
+                src="./assets/profile.jpg"
+                alt=""
+                height="50"
+                width="50"
+                class="rounded-circle"
+              />
+            </div>
+            <div
+              class="
+                col-7
+                d-flex
+                flex-column
+                justify-content-center
+                align-items-center
+              "
+            >
+              <strong>Name</strong>
+              <p>Algo breve</p>
+            </div>
+            <div
+              class="
+                col-3
+                d-flex
+                flex-column
+                justify-content-center
+                align-items-end
+              "
+            >
+              <span>Fecha</span>
+              <span>5</span>
+            </div>
+          </div>
+          <div class="col-12 row p-2">
+            <div class="col-2">
+              <img
+                src="./assets/profile.jpg"
+                alt=""
+                height="50"
+                width="50"
+                class="rounded-circle"
+              />
+            </div>
+            <div
+              class="
+                col-7
+                d-flex
+                flex-column
+                justify-content-center
+                align-items-center
+              "
+            >
+              <strong>Name</strong>
+              <p>Algo breve</p>
+            </div>
+            <div
+              class="
+                col-3
+                d-flex
+                flex-column
+                justify-content-center
+                align-items-end
+              "
+            >
+              <span>Fecha</span>
+              <span>5</span>
+            </div>
+          </div>
+
+          <h2>Contactos</h2>
+          <div class="col-12 row p-2">
+            <div class="col-2">
+              <img
+                src="./assets/profile.jpg"
+                alt=""
+                height="50"
+                width="50"
+                class="rounded-circle"
+              />
+            </div>
+            <div
+              class="
+                col-7
+                d-flex
+                flex-column
+                justify-content-center
+                align-items-center
+              "
+            >
+              <strong>Name</strong>
+              <p>Algo breve</p>
+            </div>
+            <div
+              class="
+                col-3
+                d-flex
+                flex-column
+                justify-content-center
+                align-items-end
+              "
+            >
+              <span>Fecha</span>
+              <span>5</span>
+            </div>
+          </div>
+          <div class="col-12 row p-2">
+            <div class="col-2">
+              <img
+                src="./assets/profile.jpg"
+                alt=""
+                height="50"
+                width="50"
+                class="rounded-circle"
+              />
+            </div>
+            <div
+              class="
+                col-7
+                d-flex
+                flex-column
+                justify-content-center
+                align-items-center
+              "
+            >
+              <strong>Name</strong>
+              <p>Algo breve</p>
+            </div>
+            <div
+              class="
+                col-3
+                d-flex
+                flex-column
+                justify-content-center
+                align-items-end
+              "
+            >
+              <span>Fecha</span>
+              <span>5</span>
+            </div>
+          </div>
+          <div class="col-12 row p-2">
+            <div class="col-2">
+              <img
+                src="./assets/profile.jpg"
+                alt=""
+                height="50"
+                width="50"
+                class="rounded-circle"
+              />
+            </div>
+            <div
+              class="
+                col-7
+                d-flex
+                flex-column
+                justify-content-center
+                align-items-center
+              "
+            >
+              <strong>Name</strong>
+              <p>Algo breve</p>
+            </div>
+            <div
+              class="
+                col-3
+                d-flex
+                flex-column
+                justify-content-center
+                align-items-end
+              "
+            >
+              <span>Fecha</span>
+              <span>5</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-7"></div>
+      </div>
+    </div>
+
+    <!-- <div>
+      <div>
+        <label for="">IP</label>
+        <input type="text" id="ip" />
+      </div>
+      <div>
+        <label for="">canal</label>
+        <input type="text" id="canal" />
+      </div>
+      <div>
+        <label for="">usuario</label>
+        <input type="text" id="usuario" />
+      </div>
+      <div>
+        <button onclick="conectar()">Conectar</button>
+      </div>
+      <div>
+        <label for="">Msg de envio</label>
+        <textarea name="" cols="30" rows="10" id="envia"></textarea>
+      </div>
+      <div>
+        <label for="">Msg que recive</label>
+        <textarea name="" cols="30" rows="10" id="recive"></textarea>
+      </div>
+      <div class="container"></div>
+      <button onclick="send()">Enviar mensaje</button>
+    </div> -->
+
+    <script>
+      let socket = {};
+      const conectar = () => {
+        const ip = document.getElementById("ip").value;
+        const canal = document.getElementById("canal").value;
+        const usuario = document.getElementById("usuario").value;
+        const recive = document.getElementById("recive");
+        // "http://localhost:3001"
+        socket = io.connect(ip, {
+          forceNew: true,
+        });
+
+        socket.on("con", (data) => {
+          console.log(data);
+        });
+        socket.on(canal, (data) => {
+          recive.value += "\n " + data;
+        });
+      };
+
+      const send = () => {
+        const canal = document.getElementById("canal").value;
+        const usuario = document.getElementById("usuario").value;
+        const envia = document.getElementById("envia").value;
+        // "http://localhost:3001"
+        console.log(canal, envia);
+        // socket.emit(canal, `${usuario}: ${envia}`);
+        const data = {
+          canal,
+          user: usuario,
+          msg: envia,
+        };
+        fetch("http://localhost:3001/api/msg", {
+          method: "POST", // or 'PUT'
+          body: JSON.stringify(data), // data can be `string` or {object}!
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => console.log(data));
+      };
+    </script>
+  </body>
+</html>
