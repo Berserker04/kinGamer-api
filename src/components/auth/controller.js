@@ -1,67 +1,99 @@
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 
-const store = require("./store");
+const store = require('./store')
 
 const login = async (data) => {
-  let { password, user_name } = data;
+  let { password, user_name } = data
 
   // password = bcrypt.hashSync(password, 10)
   // console.log(password);
-  let users = await store.get(user_name).catch((e) => false);
+  let users = await store.get(user_name).catch((e) => false)
 
   if (users) {
     if (!(users.length > 0)) {
-      return false;
+      return false
     }
 
-    let user = users[0];
-    if (!bcrypt.compareSync(password || "", user.password)) {
-      return false;
+    let user = users[0]
+    if (!bcrypt.compareSync(password || '', user.password)) {
+      return false
     }
-    console.log(user);
-    user.password = undefined;
+
+    user.password = undefined
 
     let token = jwt.sign(
       {
         login: user,
       },
       process.env.SEED,
-      { expiresIn: process.env.TOKEN_EXPIRATION }
-    );
+      { expiresIn: process.env.TOKEN_EXPIRATION },
+    )
 
     return {
       token,
       // user,
-    };
+    }
   } else {
-    return false;
+    return false
   }
-};
+}
+
+const refreshToken = async (data) => {
+  let { user_name } = data
+
+  let users = await store.get(user_name).catch((e) => false)
+
+  if (users) {
+    if (!(users.length > 0)) {
+      return false
+    }
+
+    let user = users[0]
+
+    user.password = undefined
+
+    let token = jwt.sign(
+      {
+        login: user,
+      },
+      process.env.SEED,
+      { expiresIn: process.env.TOKEN_EXPIRATION },
+    )
+
+    return {
+      token,
+      user,
+    }
+  } else {
+    return false
+  }
+}
 
 const validateToken = async (token) => {
-  if (!token) return false;
-  let usuario = null;
-  token = token.split(" ")[1];
+  if (!token) return false
+  let usuario = null
+  token = token.split(' ')[1]
   jwt.verify(token, process.env.SEED, (err, decoded) => {
     if (!err) {
-      usuario = decoded;
+      usuario = decoded
     }
-  });
+  })
 
-  if (!usuario) return false;
-  var Today = Math.round(new Date().getTime() / 1000);
+  if (!usuario) return false
+  var Today = Math.round(new Date().getTime() / 1000)
 
-  const { exp } = usuario;
+  const { exp } = usuario
   if (Today < exp) {
-    return { user: usuario.login };
+    return { user: usuario.login }
   }
   return {
     user: {},
-  };
-};
+  }
+}
 
 module.exports = {
   login,
   validateToken,
-};
+  refreshToken
+}

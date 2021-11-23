@@ -14,6 +14,10 @@ const products = new Schema({
     type: "string",
     required: true,
   },
+  slug: {
+    type: "string",
+    required: true,
+  },
   urlBuy: {
     type: "string",
     required: true,

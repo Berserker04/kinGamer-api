@@ -13,7 +13,7 @@ const people = new Schema({
   },
   image: {
     type: String,
-    required: false,
+    // required: false,
   },
 });
 

@@ -25,7 +25,6 @@ route.get("/", (req, res) => {
   controller
     .search(filter)
     .then((result) => {
-      console.log(result);
       if (!result) return response.success(req, res, 200, "Chats no encontrodos.");
       response.success(req, res, 200, "Chats", result);
     })

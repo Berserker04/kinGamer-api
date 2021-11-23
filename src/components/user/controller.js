@@ -54,7 +54,14 @@ const update = async (user_id, data) => {
   if (!user || !person) {
     return false;
   }
-  console.log(person, "trae");
+
+  if (person.image) {
+    const { image, first_name } = data;
+    person.image = saveImage(image, first_name);
+  } else {
+    delete person.image
+  }
+
   await storePerson.edit({ _id: person._id }, person).catch((e) => false);
 
   if (user.password) user.password = bcrypt.hashSync(user.password, 10);

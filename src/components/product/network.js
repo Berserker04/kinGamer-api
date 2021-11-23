@@ -26,6 +26,7 @@ route.get("/", (req, res) => {
   controller
     .search(filter)
     .then((result) => {
+      console.log(result);
       response.success(req, res, 200, "Producto registrado", result);
     })
     .catch((error) => {

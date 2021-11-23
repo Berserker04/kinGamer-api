@@ -6,6 +6,9 @@ const add = async (data) => {
 };
 
 const edit = async (filter = {}, data = {}) => {
+  delete data._id
+  console.log(filter)
+  console.log(data)
   return await Person.updateOne(filter, data);
 };
 

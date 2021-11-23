@@ -14,6 +14,10 @@ const news = new Schema({
     type: "string",
     required: true,
   },
+  slug: {
+    type: "string",
+    required: true,
+  },
   state: {
     type: Boolean,
     required: true,

@@ -1,5 +1,7 @@
 const saveImage = require("../files/saveImage");
 const store = require("./store");
+var slug = require('slug')
+var print = console.log.bind(console, '>')
 
 const register = async (data) => {
   if (!data) {
@@ -7,6 +9,8 @@ const register = async (data) => {
   }
   const { image, title } = data;
   if (image) data.image = saveImage(image, title);
+
+  data.slug = slug(data.title)
 
   return await store
     .add(data)
@@ -24,6 +28,7 @@ const update = async (report_id, data) => {
   }
   const { image, title } = data;
   if (image) data.image = saveImage(image, title);
+  data.slug = slug(data.title)
   return await store
     .edit(report_id, data)
     .then((result) => result)
