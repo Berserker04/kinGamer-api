@@ -46,4 +46,30 @@ route.get('/', (req, res) => {
     })
 })
 
+route.post('/recovery/password', (req, res) => {
+  controller
+    .recoveryPassword(req.body.email)
+    .then((result) => {
+      if (!result) return response.error(req, res, 200, 'El correo ingresado no esta registrado')
+      response.success(req, res, 200, 'Envio exito, revisa tu correo', result)
+    })
+    .catch((error) => {
+      console.error(error)
+      response.error(req, res, 500, 'Error al validar intenda más tarde.')
+    })
+})
+
+route.get('/recovery/password', (req, res) => {
+  controller
+    .validateTokenRecoveryPassword(req.headers.authorization)
+    .then((result) => {
+      if (!result) return response.error(req, res, 200, 'Token invalido')
+      response.success(req, res, 200, 'Token valido', result)
+    })
+    .catch((error) => {
+      console.error(error)
+      response.error(req, res, 500, 'Error al validar intenda más tarde.')
+    })
+})
+
 module.exports = route

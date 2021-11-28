@@ -81,7 +81,7 @@ route.put('/:_id', (req, res) => {
     .update(req.params._id, req.body)
     .then((result) => {
       if (!result) return response.error(req, res, 200, 'Revisa los datos.')
-      response.success(req, res, 200, 'Modificación exíto.')
+      response.success(req, res, 200, 'Modificación exíta.')
     })
     .catch((error) => {
       console.error(error)
