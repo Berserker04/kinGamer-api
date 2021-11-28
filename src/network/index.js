@@ -6,6 +6,7 @@ const auth = require('../components/auth/network')
 const news = require('../components/news/network')
 const chats = require('../components/chat/chats/network')
 const messages = require('../components/chat/messages/network')
+const addUser = require('../components/chat/addUser/network')
 
 const path = require('path')
 
@@ -17,6 +18,7 @@ const route = (app) => {
   app.use('/api/news', news)
   app.use('/api/chats', chats)
   app.use('/api/messages', messages)
+  app.use('/api/addUser', addUser)
 
   app.get('/api/load/image/:image', (req, res) => {
     console.log(__dirname)
