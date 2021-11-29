@@ -51,7 +51,7 @@ route.post('/recovery/password', (req, res) => {
     .recoveryPassword(req.body.email)
     .then((result) => {
       if (!result) return response.error(req, res, 200, 'El correo ingresado no esta registrado')
-      response.success(req, res, 200, 'Envio exito, revisa tu correo', result)
+      response.success(req, res, 200, 'Envío exitoso, revise su correo electrónico', result)
     })
     .catch((error) => {
       console.error(error)

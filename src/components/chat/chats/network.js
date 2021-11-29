@@ -12,7 +12,7 @@ route.post('/', (req, res) => {
       if (!result) return response.error(req, res, 200, 'Revisa los datos.')
       socket.io.emit(req.body?.users[0], result)
       socket.io.emit(req.body?.users[1], result)
-      response.success(req, res, 201, 'Registro exíto.', result)
+      response.success(req, res, 201, 'Registro exitoso.', result)
     })
     .catch((error) => {
       console.error(error)

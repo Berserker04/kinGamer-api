@@ -22,7 +22,7 @@ route.post('/', (req, res) => {
       socket.io.in(req.body.chat).emit(NEW_CHAT_MESSAGE_EVENT, result)
       socket.io.emit(req.body?.user?._id, result)
       socket.io.emit(req.body?.user2?._id, result)
-      response.success(req, res, 201, 'Registro exíto 1.', result)
+      response.success(req, res, 201, 'Registro exíto', result)
     })
     .catch((error) => {
       console.error(error)

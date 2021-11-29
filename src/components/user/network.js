@@ -16,7 +16,7 @@ route.post('/', (req, res) => {
           200,
           result.message ? result.message : 'Revisa los datos.',
         )
-      response.success(req, res, 201, 'Registro exíto.', result)
+      response.success(req, res, 201, 'Registro exitoso.', result)
     })
     .catch((error) => {
       console.error(error)
@@ -93,7 +93,13 @@ route.put('/password/:_id', (req, res) => {
   controller
     .updatePassword(req.params._id, req.body)
     .then((result) => {
-      if (!result) return response.error(req, res, 200, 'La contraseña ingresada no coincide con la actual')
+      if (!result)
+        return response.error(
+          req,
+          res,
+          200,
+          'La contraseña ingresada no coincide con la actual',
+        )
       response.success(req, res, 200, 'Contraseña actualizada.')
     })
     .catch((error) => {
